@@ -1,0 +1,13 @@
+.main-container {
+  width: 80%;
+  margin: 0px auto;
+}
+
+.post-wrapper {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-template-columns: repeat(auto-fit, 320px);
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 50px;
+}

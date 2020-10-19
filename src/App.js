@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import "./App.css"
+import About from "./components/about/About"
+import Experience from "./components/about/Experience"
+import Contact from "./components/contact/Contact"
+import Featured from "./components/featured/Featured"
+import Header from "./components/header-footer/Header"
+import Work from "./components/work/Work"
+
+
+import {Element} from 'react-scroll'
+import Blog from "./components/blog/Blog"
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div className="App">
+
+      <Element name="home">
+        <Header />
+        <Featured />
+      </Element>
+
+      <Element name="about">
+        <About />
+        <Experience />
+      </Element>
+
+      <Element name="works">
+        <Work />
+      </Element>
+
+      <Element name="contact">
+        <Contact />
+      </Element>
+
+      <Switch>
+        <Route path="/blog" component={Blog} />
+      </Switch>
+      </div>
+    </Router>
+    
+  )
 }
 
-export default App;
+export default App
